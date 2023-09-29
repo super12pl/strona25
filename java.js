@@ -20,6 +20,9 @@ function getRandomInt(max) {
 
 document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     e.preventDefault();
+    pokoje.style.display="grid"
+    pokoje.style.GridTemplateColumns=`repeat(${ilePokoji}, 1fr)`
+    pokoje.style.GridTemplateColumns=`repeat(${ilePokoji}, 1fr)`
     const ilosczielonych = document.getElementById("zieloneinput").value
     const iloscżółtych = document.getElementById("żółteinput").value
     const iloscczerwonych = document.getElementById("czerwoneinput").value
