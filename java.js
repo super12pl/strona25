@@ -32,13 +32,43 @@ document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     document.getElementById("wyborpokoi").style.display = "none"
     listapokoi = []
     for(i=0;i<ilosczielonych;i++){
-        listapokoi.push(zielonepokoje[getRandomInt((zielonepokoje.length)-1)])
+        poko = tempzielone.splice(getRandomInt((tempzielone.length)-1),1)[0]
+        if(poko){
+            listapokoi.push(poko)
+        }
+        else{
+            listapokoi.push("pusty pokój")
+        }
+        
     }
     for(i=0;i<iloscżółtych;i++){
-        listapokoi.push(żółtepokoje[getRandomInt((żółtepokoje.length)-1)])
+        poko = tempżółte.splice(getRandomInt((tempżółte.length)-1),1)[0]
+        if(poko){
+            listapokoi.push(poko)
+        }
+        else{
+            listapokoi.push("pusty pokój")
+        }
     }
     for(i=0;i<iloscczerwonych;i++){
-        listapokoi.push(czerwonepokoje[getRandomInt((czerwonepokoje.length)-1)])
+        poko = tempczerwone.splice(getRandomInt((tempczerwone.length)-1),1)[0]
+        if(poko){
+            listapokoi.push(poko)
+        }
+        else{
+            listapokoi.push("pusty pokój")
+        }
+    }
+    if(listapokoi.length<25){
+        for(i=0;i<25-listapokoi.length;i++){
+            listapokoi.push("pusty pokój")
+        }
+    }
+    if(listapokoi.length>25){
+        for(i=0;i<listapokoi.length-25;i++){
+            listapokoi.pop()
+        }
+        
     }
     console.log(listapokoi)
 
