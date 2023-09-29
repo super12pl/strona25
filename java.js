@@ -12,11 +12,28 @@ for(let i=0;i<ilePokoi;i++){
     }
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     e.preventDefault();
     const ilosczielonych = document.getElementById("zieloneinput").value
-    const iloscżółte = document.getElementById("żółteinput").value
+    const iloscżółtych = document.getElementById("żółteinput").value
     const iloscczerwonych = document.getElementById("czerwoneinput").value
     document.getElementById("wyborpokoi").style.display = "none"
-    
+    listapokoi = []
+    for(i=0;i<ilosczielonych;i++){
+        listapokoi.push(zielonepokoje[getRandomInt((zielonepokoje.length)-1)])
+    }
+    for(i=0;i<iloscżółtych;i++){
+        listapokoi.push(żółtepokoje[getRandomInt((żółtepokoje.length)-1)])
+    }
+    for(i=0;i<iloscczerwonych;i++){
+        listapokoi.push(czerwonepokoje[getRandomInt((czerwonepokoje.length)-1)])
+    }
+    console.log(listapokoi)
+
+
+
   });
