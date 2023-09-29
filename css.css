@@ -25,7 +25,7 @@ main{
     width:50px;
 }
 .pokoje{
-    display: flex;
+    display: none;
     
 }
 .pokoj{
