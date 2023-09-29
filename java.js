@@ -1,4 +1,4 @@
-zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","komora robotów","komora regeneracji"]
+zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","pokój z tunelem","pokój z tunelem","komora robotów","komora robotów","komora regeneracji","komora regeneracji"]
 żółtepokoje = ["pokój z wirem","cela","ciemny pokój","komora chłodu","komora obrotowa","komora zakłócania","pokój ZRB","pokój luster"]
 czerwonepokoje = ["wanna z kwasem","zalana komora","pokój pułapka","pokój iluzji","komora śmierci", "pokój paranoi","pokój zegarowy","komora pił"]
 niebieskiepokoje = ["pokój centralny","pokój 25","pokój kontrolny"]
@@ -56,13 +56,13 @@ document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
             listapokoi.push("pusty pokój")
         }
     }
-    if(listapokoi.length<25){
-        for(i=0;i<25-listapokoi.length;i++){
+    if(listapokoi.length<23){
+        for(i=0;i<23-listapokoi.length;i++){
             listapokoi.push("pusty pokój")
         }
     }
-    if(listapokoi.length>25){
-        for(i=0;i<listapokoi.length-25;i++){
+    if(listapokoi.length>23){
+        for(i=0;i<listapokoi.length-23;i++){
             listapokoi.pop()
         }
         
