@@ -14,6 +14,6 @@ document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     const ilosczielonych = document.getElementById("zieloneinput").value
     const iloscżółte = document.getElementById("żółteinput").value
     const iloscczerwonych = document.getElementById("czerwoneinput").value
-  
+    document.getElementById("wyborpokoi").style.display = "none"
     
   });
