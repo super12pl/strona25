@@ -9,6 +9,7 @@ for(let i=0;i<ilePokoi;i++){
     for(let j=0;j<ilePokoi;j++){
         const pokoj = document.createElement("div")
         pokoj.setAttribute("class","pokoj")
+        pokoje.appendChild(pokoj)
     }
 }
 
