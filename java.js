@@ -3,6 +3,12 @@ zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","k
 czerwonepokoje = ["wanna z kwasem","zalana komora","pokój pułapka","pokój iluzji","komora śmierci", "pokój paranoi","pokój zegarowy","komora pił"]
 niebieskiepokoje = ["pokój centralny","pokój 25","pokój kontrolny"]
 
+let ilePokoi=5
+const pokoje = document.querySelector(".pokoje")
+for(let i=0;i<ilePokoi;i++){
+    
+}
+
 document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     e.preventDefault();
     const ilosczielonych = document.getElementById("zieloneinput").value
