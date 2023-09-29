@@ -1,1 +1,3 @@
-
+zielonepokoje = []
+żółtepokoje = []
+czerwonepokoje = []
