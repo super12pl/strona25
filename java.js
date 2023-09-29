@@ -6,7 +6,10 @@ niebieskiepokoje = ["pokój centralny","pokój 25","pokój kontrolny"]
 let ilePokoi=5
 const pokoje = document.querySelector(".pokoje")
 for(let i=0;i<ilePokoi;i++){
-    
+    for(let j=0;j<ilePokoi;j++){
+        const pokoj = document.createElement("div")
+        pokoj.setAttribute
+    }
 }
 
 function getRandomInt(max) {

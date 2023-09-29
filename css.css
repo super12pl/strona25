@@ -24,3 +24,11 @@ main{
 #wyborpokoi input{
     width:50px;
 }
+.pokoje{
+    display: flex;
+    
+}
+.pokoj{
+    width:100px;
+    height: 100px;
+}
