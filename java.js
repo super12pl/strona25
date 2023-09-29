@@ -8,7 +8,7 @@ const pokoje = document.querySelector(".pokoje")
 for(let i=0;i<ilePokoi;i++){
     for(let j=0;j<ilePokoi;j++){
         const pokoj = document.createElement("div")
-        pokoj.setAttribute
+        pokoj.setAttribute("class",".pokoj")
     }
 }
 
