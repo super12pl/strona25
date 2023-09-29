@@ -8,3 +8,8 @@ main{
     align-items: center;
     flex-direction: column;
 }
+#wybórpokoi{
+    display: none;
+    width: 500px;
+    height: 200px;
+}
