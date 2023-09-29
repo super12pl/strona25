@@ -7,6 +7,7 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 10%;
 }
 #wyborpokoi{
     position: absolute;
@@ -26,7 +27,6 @@ main{
 }
 .pokoje{
     display: none;
-    
 }
 .pokoj{
     width:100px;
