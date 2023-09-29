@@ -23,6 +23,7 @@ document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     pokoje.style.display="grid"
     pokoje.style.gridTemplateColumns=`repeat(${ilePokoi}, 1fr)`
     pokoje.style.gridTemplateRows=`repeat(${ilePokoi}, 1fr)`
+    pokoje.style.gap="5px"
     const ilosczielonych = document.getElementById("zieloneinput").value
     const iloscżółtych = document.getElementById("żółteinput").value
     const iloscczerwonych = document.getElementById("czerwoneinput").value
