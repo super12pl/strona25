@@ -10,13 +10,37 @@ for(let i=0;i<ilePokoi;i++){
     for(let j=0;j<ilePokoi;j++){
         const pokoj = document.createElement("div")
         pokoj.setAttribute("class","pokoj")
+        if(j==Math.floor(ilePokoi/2)&&i==j){
+            pokoj.classList.add("centralny")
+            pokoj.innerText = "pokój centralny"
+        }
+        if(i==Math.floor(ilePokoi/2) ||j==Math.floor(ilePokoi/2) || ((i == Math.floor(ilePokoi/2)-1 || i == Math.floor(ilePokoi/2)+1)&&(j == Math.floor(ilePokoi/2)-1 || j == Math.floor(ilePokoi/2)+1))){
+            pokoj.classList.add("wewnętrzny")
+        }
         pokoje.appendChild(pokoj)
     }
 }
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+}
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex > 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+}
 
 document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -59,18 +83,37 @@ document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
             listapokoi.push("pusty pokój")
         }
     }
+
     if(listapokoi.length<23){
-        for(i=0;i<23-listapokoi.length;i++){
+        for(i=0;listapokoi.length<23;i++){
             listapokoi.push("pusty pokój")
         }
     }
     if(listapokoi.length>23){
-        for(i=0;i<listapokoi.length-23;i++){
+        for(i=0;listapokoi>23;i++){
             listapokoi.pop()
         }
         
     }
-    console.log(listapokoi)
+    listapokoiwewnętrznych = listapokoi.splice(Math.floor(listapokoi.length / 2))
+    listapokoi.push("pokój 25")
+    listapokoiwewnętrznych = shuffle(listapokoiwewnętrznych)
+    listapokoi = shuffle(listapokoi)
+    index1 = 0
+    index2 = 0
+    document.querySelectorAll(".pokoj").forEach(element => {
+        if(!element.classList.contains("centralny")){
+            if(element.classList.contains("wewnętrzny")){
+                element.innerHTML =listapokoiwewnętrznych[index1]
+                index1++
+            }
+            else{
+                element.innerHTML =listapokoi[index2]
+                index2++
+            }
+            
+        }
+    });
 
 
 
