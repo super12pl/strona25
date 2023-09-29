@@ -25,10 +25,12 @@ main{
     width:50px;
 }
 .pokoje{
-    display: flex;
+    display: none;
     
 }
 .pokoj{
     width:100px;
     height: 100px;
+    border: 1px dotted grey;
+    border-radius: 20px;
 }
