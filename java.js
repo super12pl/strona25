@@ -5,6 +5,13 @@ niebieskiepokoje = ["pokój centralny","pokój 25","pokój kontrolny"]
 
 let ilePokoi=5
 const pokoje = document.querySelector(".pokoje")
+class gracz {
+    constructor(akcja1,akcja2){
+        this.akcja1=akcja1
+        this.akcja2=akcja2
+    }
+}
+
 
 for(let i=0;i<ilePokoi;i++){//Gratuluje Szymonie
     for(let j=0;j<ilePokoi;j++){
