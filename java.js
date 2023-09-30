@@ -9,6 +9,7 @@ class gracz {
     constructor(akcja1,akcja2){
         this.akcja1=akcja1
         this.akcja2=akcja2
+        this.Alive=true
     }
 }
 
