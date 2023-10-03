@@ -9,8 +9,8 @@
   <script src="java.js" defer></script> 
 </head>
   <body>
-    <main>
-      <form id="wyborpokoi">
+    <main class="flexcol">
+      <form id="wyborpokoi" class="flexcol" name="wyborpokoi">
         <h1>Strona 25</h1>
         <label for="zielone">Ilość pokoi zielonych</label>
         <input type="number" name="zielone" id="zieloneinput" min="0" max="23">
@@ -24,6 +24,26 @@
         <!--huj twojego starego-->
         <!--czary mary twoja stara to twój stary a twa stara obladza fujary-->
         
+      </div>
+      <div class="postac flexcol">
+        <p class="nazwapostaci">Frank</p>
+        <div id="akcje" class="flexrow">
+          <form class="akcja1 flexcol" name="akcja2">
+            <p>Akcja 1</p>
+            <label for="look1">Zwiad</label><input type="radio" id="look1" name="look" value="look" onchange='akcjaradio(this,"akcja1")'>
+            <label for="move1">Ruch</label><input type="radio" id="move1" name="move" value="move" onchange='akcjaradio(this,"akcja1")'>
+            <label for="control1">Ruch budynkiem</label><input type="radio" id="control1" name="control" value="control" onchange='akcjaradio(this,"akcja1")'>
+            <label for="push1">Wypychanie</label><input type="radio" id="push1" name="push" value="push" onchange='akcjaradio(this,"akcja1")'>
+          </form>
+          <form class="akcja2 flexcol" name="akcja2">
+            <p>Akcja 2</p>
+            <label for="look2">Zwiad</label><input type="radio" id="look2" name="look" value="look" onchange='akcjaradio(this,"akcja2")'>
+            <label for="move2">Ruch</label><input type="radio" id="move2" name="move" value="move" onchange='akcjaradio(this,"akcja2")'>
+            <label for="control2">Ruch budynkiem</label><input type="radio" id="control2" name="control" value="control" onchange='akcjaradio(this,"akcja2")'>
+            <label for="push2">Wypychanie</label><input type="radio" id="push2" name="push" value="push" onchange='akcjaradio(this,"akcja2")'>
+          </form>
+        </div>
+        <label for="gotowy">Gotów</label><input id="gotowy" type="checkbox">
       </div>
     </main>
   </body>
