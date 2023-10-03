@@ -32,6 +32,11 @@ class gracz {
         this.Alive=true
     }
 }
+function discover(){
+    if(this.classList.contains("zakryty"){
+        this.classList.remove("zakryty")
+    }//nie chce mi sie dokoncze wieczorem
+}
 function look(){
 
 }
