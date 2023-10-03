@@ -1,36 +1,3 @@
-zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","pokój z tunelem","pokój z tunelem","komora robotów","komora robotów","komora regeneracji","komora regeneracji"]
-żółtepokoje = ["pokój z wirem","cela","ciemny pokój","komora chłodu","komora obrotowa","komora zakłócania","pokój ZRB","pokój luster"]
-czerwonepokoje = ["wanna z kwasem","zalana komora","pokój pułapka","pokój iluzji","komora śmierci", "pokój paranoi","pokój zegarowy","komora pił"]
-niebieskiepokoje = ["pokój centralny","pokój 25","pokój kontrolny"]
-
-let ilePokoi=5
-const pokoje = document.querySelector(".pokoje")
-class gracz {
-    constructor(akcja1,akcja2){
-        this.akcja1=akcja1
-        this.akcja2=akcja2
-        this.Alive=true
-    }
-}
-
-
-for(let i=0;i<ilePokoi;i++){//Gratuluje Szymonie
-    for(let j=0;j<ilePokoi;j++){
-        const pokoj = document.createElement("div")
-        pokoj.setAttribute("class","pokoj")
-        //jeśli jest to pokój na środku, daj mu klasę centralny
-        if(j==Math.floor(ilePokoi/2)&&i==j){
-            pokoj.classList.add("centralny")
-            pokoj.innerText = "pokój centralny"
-        }
-        //jeśli jest to pokój w środkowym wierszu lub kolumnie lub sąsiadujący z centralnym, dodaj klasę wewnętrzny
-        if(i==Math.floor(ilePokoi/2) ||j==Math.floor(ilePokoi/2) || ((i == Math.floor(ilePokoi/2)-1 || i == Math.floor(ilePokoi/2)+1)&&(j == Math.floor(ilePokoi/2)-1 || j == Math.floor(ilePokoi/2)+1))){
-            pokoj.classList.add("wewnętrzny")
-        }
-        pokoje.appendChild(pokoj)
-    }
-}
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -52,24 +19,102 @@ function shuffle(array) {
     return array;
 }
 
+zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","pokój z tunelem","pokój z tunelem","komora robotów","komora robotów","komora regeneracji","komora regeneracji"]
+żółtepokoje = ["pokój z wirem","pokój z wirem","cela","cela","ciemny pokój","ciemny pokój","komora chłodu","komora chłodu","komora obrotowa","komora obrotowa","komora zakłócania","pokój ZRB","pokój ZRB","pokój luster"]
+czerwonepokoje = ["wanna z kwasem","wanna z kwasem","zalana komora","zalana komora","pokój pułapka","pokój pułapka","pokój iluzji","komora śmierci","komora śmierci", "pokój paranoi","pokój zegarowy","komora pił","komora pił"]
+
+let ilePokoi=5
+const pokoje = document.querySelector(".pokoje")
+class gracz {
+    constructor(akcja1,akcja2){
+        this.akcja1=akcja1
+        this.akcja2=akcja2
+        this.Alive=true
+    }
+}
+function look(){
+
+}
+function move(){
+
+}
+function control(){
+
+}
+function push(){
+
+}
+
+//ogarnia radio akcji
+function akcjaradio(caller, container){
+    //jedna czynność na akcje
+    document.querySelector("." + container).querySelectorAll("input").forEach((element)=>{
+        if(element!=caller){
+            setTimeout(function() { 
+                element.checked = false; 
+            }, 5); 
+        }
+    })
+    //niepowtarzające się czynności
+    document.querySelector("#akcje").querySelectorAll("input[name='" + caller.name + "']").forEach((element)=>{
+        if(element!=caller){
+            setTimeout(function() { 
+                element.checked = false; 
+            }, 5); 
+        }
+    })
+}
+
+for(let i=0;i<ilePokoi;i++){//Gratuluje Szymonie
+    for(let j=0;j<ilePokoi;j++){
+        const pokoj = document.createElement("div")
+        pokoj.setAttribute("class","pokoj")
+        if(j==Math.floor(ilePokoi/2)&&i==j){
+            //jeśli jest to pokój na środku, daj mu klasę centralny
+            pokoj.classList.add("centralny")
+            pokoj.innerText = "pokój centralny"
+        }
+        else{
+            //zakryj pokoj jeśli nie jest centralny
+            pokoj.classList.add("zakryty")
+        }
+        //jeśli jest to pokój w środkowym wierszu lub kolumnie lub sąsiadujący z centralnym, dodaj klasę wewnętrzny
+        if(i==Math.floor(ilePokoi/2) ||j==Math.floor(ilePokoi/2) || ((i == Math.floor(ilePokoi/2)-1 || i == Math.floor(ilePokoi/2)+1)&&(j == Math.floor(ilePokoi/2)-1 || j == Math.floor(ilePokoi/2)+1))){
+            pokoj.classList.add("wewnętrzny")
+        }
+        pokoje.appendChild(pokoj)
+    }
+}
+
+
+
 document.getElementById("wyborpokoi").addEventListener("submit", (e) => {
     //zapobiega refresh strony
     e.preventDefault();
+
     //wyświetla pokoje na gridzie
     pokoje.style.display="grid"
     pokoje.style.gridTemplateColumns=`repeat(${ilePokoi}, 1fr)`
     pokoje.style.gridTemplateRows=`repeat(${ilePokoi}, 1fr)`
     pokoje.style.gap="5px"
+
     //pobiera ilosc pokoi
     const ilosczielonych = document.getElementById("zieloneinput").value
     const iloscżółtych = document.getElementById("żółteinput").value
     const iloscczerwonych = document.getElementById("czerwoneinput").value
+
     //tworzy tymczasowe listy pokoi
     tempzielone = zielonepokoje
     tempżółte = żółtepokoje
     tempczerwone = czerwonepokoje
+
+    //chowa panel wyboru
     document.getElementById("wyborpokoi").style.display = "none"
     listapokoi = []
+
+    //wyświetla panel postaci
+    document.querySelector(".postac").style.display = "flex"
+
     for(i=0;i<ilosczielonych;i++){
         //losuje pokój z tymczasowej listy i go usuwa
         poko = tempzielone.splice(getRandomInt((tempzielone.length)-1),1)[0]
