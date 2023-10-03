@@ -33,9 +33,7 @@ class gracz {
     }
 }
 function discover(){
-    if(this.classList.contains("zakryty"){
-        this.classList.remove("zakryty")
-    }//nie chce mi sie dokoncze wieczorem
+    this.classList.remove("zakryty")
 }
 function look(){
 
@@ -48,6 +46,9 @@ function control(){
 }
 function push(){
 
+}
+function gotowo(){
+    document.getElementById("gotowy").setAttribute("disabled","disabled")
 }
 
 //ogarnia radio akcji
