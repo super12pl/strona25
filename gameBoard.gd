@@ -9,11 +9,15 @@ func _ready():
 	randomize()
 	pokoje.shuffle()
 	for n in iloscPokoi:
-		var tile = Sprite2D.new()
-		tile.texture = load("res://jajo.jpg")
+		var tile = TextureRect.new()
+		tile.texture = load("res://jajo.jpg") #zamiast jaja będzie ładować pokoje[n].png
+		tile.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED #NIE DA SIĘ TEGO KURWA SKALOWAĆ JA PIERDOLE
 		var label = Label.new()
 		label.text = pokoje[n]
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER #AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		label.add_theme_font_size_override("font_size",10)
+		label.add_theme_color_override("font_color","black")
 		tile.add_child(label)
 		add_child(tile)
 		
