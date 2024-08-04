@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="strona25"
-run/main_scene="res://gameBoard.tscn"
+run/main_scene="res://Menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+global="*res://global.gd"
 
 [rendering]
 
