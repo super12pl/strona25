@@ -4,11 +4,19 @@ extends Control
 @onready var szeregi = $MarginContainer/VBoxContainer/HBoxContainer2/szeregi
 @onready var kolumny = $MarginContainer/VBoxContainer/HBoxContainer3/kolumny
 
+func _ready():
+	gracze.text = str(global.players)
+	szeregi.text = str(global.szeregi)
+	kolumny.text = str(global.kolumny)
+
 func _on_play_pressed():
 	global.players = int(gracze.get_line(0))
 	global.szeregi = int(szeregi.get_line(0))
 	global.kolumny = int(kolumny.get_line(0))
 	get_tree().change_scene_to_file("res://gameBoard.tscn")
+
+func _on_options_pressed():
+	get_tree().change_scene_to_file("res://options.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()

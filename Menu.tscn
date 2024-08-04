@@ -12,10 +12,10 @@ grow_vertical = 2
 script = ExtResource("1_35cun")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 421.0
-offset_top = 468.0
-offset_right = 729.0
-offset_bottom = 538.0
+offset_left = 416.0
+offset_top = 448.0
+offset_right = 730.0
+offset_bottom = 630.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -63,9 +63,14 @@ text = "5"
 layout_mode = 2
 text = "Play"
 
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

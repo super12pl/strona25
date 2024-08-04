@@ -42,3 +42,7 @@ func _ready():
 		if kolumna == 0 or kolumna == kolumny-1 or szereg == 0 or szereg == szeregi-1:
 			set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(1,3))
 			break
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://Menu.tscn")

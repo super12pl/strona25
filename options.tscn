@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://kyvhukv3i5qp"]
+
+[ext_resource type="Script" path="res://options.gd" id="1_b3t04"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3t04")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Back"
+
+[node name="Apply" type="Button" parent="MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+text = "Apply"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Resolution" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Resolution"]
+layout_mode = 2
+
+[node name="Width" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Width"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "   > Width"
+
+[node name="width" type="TextEdit" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Width"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Height" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Height"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "   > Height"
+
+[node name="height" type="TextEdit" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Height"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Display
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "windowed"
+
+[node name="windowed" type="CheckBox" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "borderless"
+
+[node name="borderless" type="CheckBox" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Apply" to="." method="_on_apply_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/windowed" to="." method="_on_windowed_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/borderless" to="." method="_on_borderless_toggled"]
