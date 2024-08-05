@@ -49,7 +49,6 @@ func _ready():
 				tile = "pokój centralny"
 				set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(0,3))
 			else:
-				print(distanceFromCenter)
 				if distanceFromCenter>innerPoolDistance:
 					tile = outerPool.pop_front()
 				else:
