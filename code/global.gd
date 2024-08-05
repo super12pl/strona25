@@ -13,5 +13,8 @@ var pulaPokoi = ["sala wideo","ruchomy pokój","pokój z tunelem","pokój z tune
 @onready var width := get_window().size.x
 @onready var height := get_window().size.y
 
+#nie dotykać
+var reloaded = false
+
 func _ready():
 	get_window().size = Vector2i(width,height)

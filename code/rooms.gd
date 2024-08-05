@@ -1,20 +1,23 @@
 extends Node
 
 var index = global.zieloneIndex + global.zulteIndex + global.czerwoneIndex
-var rooms = global.zielone + global.żółte + global.czerwone
-var iloscDefault = [1,1,3,2,2,1,2,2,2,2,2,1,2,1,2,2,2,1,2,1,1,2]
+var rooms
 
-var iloscIndex = 0
+var reloaded = global.reloaded
 var which = true
 
 @onready var Vbox = $Table
 @onready var Vbox2 = $Table2
 
 func _ready():
+	if !reloaded:
+		rooms = global.pulaPokoi
+	else:
+		rooms = global.zielone + global.żółte + global.czerwone
+		global.reloaded = false
+		
 	for room in index:
 		if room != "pusty pokój":
-			
-			var ammount = 0
 		
 			var Hbox = HBoxContainer.new()
 			var icon = Label.new()
@@ -34,12 +37,8 @@ func _ready():
 			Hbox.add_child(addBtn)
 			Hbox.add_child(removeBtn)
 			
-			while rooms[iloscIndex] == room && iloscIndex+1 < rooms.size():
-				ammount += 1
-				iloscIndex += 1
-
 			icon.text = room
-			ammountLb.text = str(ammount)
+			ammountLb.text = str(rooms.count(room))
 			addBtn.text = "+"
 			removeBtn.text = "-"
 			
@@ -61,7 +60,7 @@ func _on_back_pressed():
 	get_tree().change_scene_to_file("res://scenes//menu.tscn")
 
 func _on_default_pressed():
-	rooms = global.zielone + global.żółte + global.czerwone
+	global.reloaded = true
 	get_tree().reload_current_scene()
 	
 func _on_apply_pressed():
