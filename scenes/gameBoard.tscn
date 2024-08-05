@@ -44,7 +44,6 @@ tile_size = Vector2i(100, 100)
 sources/0 = SubResource("TileSetAtlasSource_pobub")
 
 [node name="TileMap" type="TileMap"]
-skew = 0.230383
 tile_set = SubResource("TileSet_sqbjv")
 format = 2
 script = ExtResource("1_wmbur")
