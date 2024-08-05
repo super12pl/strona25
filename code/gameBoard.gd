@@ -48,8 +48,11 @@ func _ready():
 					tile = outerPool.pop_front()
 				else:
 					tile = innerPool.pop_front()
-				print(tile)
 				for i in range(0,tilesetIndex.size()):
 					if tilesetIndex[i].has(tile):
 						set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(tilesetIndex[i].find(tile,0),i))
 						break
+func _input(event):
+	if event is InputEventMouseButton:
+		##będzie ogarniał faktyczne granie
+		print(local_to_map(event.position))
