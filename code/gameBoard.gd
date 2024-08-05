@@ -62,6 +62,3 @@ func _ready():
 					set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(czerwonepokojeindex.find(tile,0),2))
 				else:
 					set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(1,3))
-
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes//Menu.tscn")

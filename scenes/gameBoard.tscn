@@ -59,13 +59,3 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = SubResource("GDScript_bria5")
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 591.0
-offset_top = 354.0
-offset_right = 628.0
-offset_bottom = 385.0
-text = "Exit"
-
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

@@ -1,29 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqj3s2cquk4xa"]
+[gd_scene load_steps=3 format=3 uid="uid://bqj3s2cquk4xa"]
 
+[ext_resource type="Script" path="res://code/gra.gd" id="1_ku1yj"]
 [ext_resource type="PackedScene" uid="uid://cckc05uk0frwy" path="res://scenes/gameBoard.tscn" id="1_sx0l2"]
 
 [node name="Gra" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("1_ku1yj")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -362.0
-offset_top = -228.0
-offset_right = -322.0
-offset_bottom = -188.0
-grow_horizontal = 2
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
 grow_vertical = 2
 
 [node name="TileMap" parent="Control" instance=ExtResource("1_sx0l2")]
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1108.0
+offset_top = 634.0
+offset_right = 1145.0
+offset_bottom = 665.0
+text = "Exit"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
