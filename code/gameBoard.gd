@@ -5,16 +5,13 @@ var czerwonepokojeindex = global.czerwoneIndex
 var żółtepokojeindex = global.zulteIndex
 var rng = RandomNumberGenerator.new()
 ##Zależne od użytkownika
-var zielonepokoje = global.zielone
-var żółtepokoje = global.żółte
-var czerwonepokoje = global.czerwone
+var pokoje = global.pulaPokoi
 
 ## Called when the node enters the scene tree for the first time.🤓🤓🤓
 
 func _ready():
 	var kolumny = global.kolumny
 	var szeregi = global.szeregi
-	var pokoje = zielonepokoje + żółtepokoje + czerwonepokoje 
 	##dodawanie pustych pokoi gdy normalnych jest za mało
 	if pokoje.size() < (kolumny*szeregi)-2:
 		for i in ((kolumny*szeregi)-2) - pokoje.size():
