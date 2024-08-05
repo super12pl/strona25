@@ -35,6 +35,7 @@ text = "Back
 "
 
 [node name="Default" type="Button" parent="."]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 104.0
 offset_right = 155.0
@@ -43,6 +44,7 @@ text = "Default
 "
 
 [node name="Apply" type="Button" parent="."]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 188.0
 offset_right = 157.0
