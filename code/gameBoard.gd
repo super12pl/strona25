@@ -1,8 +1,6 @@
 extends TileMap
 ##Stałe
-var zielonepokojeindex = global.zieloneIndex
-var czerwonepokojeindex = global.czerwoneIndex
-var żółtepokojeindex = global.zulteIndex
+var tilesetIndex = global.tilesetIndex
 var rng = RandomNumberGenerator.new()
 ##Zależne od użytkownika
 var pokoje = global.pulaPokoi
@@ -44,17 +42,14 @@ func _ready():
 			var distanceFromCenter = Vector2(kolumna,szereg).distance_to(Vector2(int(ceil(kolumny/2)),int(ceil(szeregi/2))))
 			if distanceFromCenter == 0:
 				tile = "pokój centralny"
-				set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(0,3))
+				set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(0,5))
 			else:
 				if distanceFromCenter>innerPoolDistance:
 					tile = outerPool.pop_front()
 				else:
 					tile = innerPool.pop_front()
-				if zielonepokojeindex.has(tile):
-					set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(zielonepokojeindex.find(tile,0),0))
-				elif żółtepokojeindex.has(tile):
-					set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(żółtepokojeindex.find(tile,0),1))
-				elif czerwonepokojeindex.has(tile):
-					set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(czerwonepokojeindex.find(tile,0),2))
-				else:
-					set_cell(0,Vector2i(kolumna,szereg),0,Vector2i(1,3))
+				print(tile)
+				for i in range(0,tilesetIndex.size()):
+					if tilesetIndex[i].has(tile):
+						set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(tilesetIndex[i].find(tile,0),i))
+						break

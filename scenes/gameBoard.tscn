@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cckc05uk0frwy"]
+[gd_scene load_steps=7 format=3 uid="uid://cckc05uk0frwy"]
 
 [ext_resource type="Texture2D" uid="uid://b7ohr0f8mrrfl" path="res://strona25tileset.png" id="1_kxtcj"]
 [ext_resource type="Script" path="res://code/gameBoard.gd" id="1_wmbur"]
+[ext_resource type="Texture2D" uid="uid://du6plphgmm6u" path="res://strona25tilesetv2.png" id="2_24ms2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pobub"]
 texture = ExtResource("1_kxtcj")
@@ -39,9 +40,44 @@ texture_region_size = Vector2i(100, 100)
 6:3/0 = 0
 7:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp8r3"]
+texture = ExtResource("2_24ms2")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_sqbjv"]
 tile_size = Vector2i(100, 100)
 sources/0 = SubResource("TileSetAtlasSource_pobub")
+sources/1 = SubResource("TileSetAtlasSource_lp8r3")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_sqbjv")
