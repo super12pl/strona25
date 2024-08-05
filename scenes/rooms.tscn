@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://vvguakrv7xkl"]
+
+[ext_resource type="Script" path="res://code/rooms.gd" id="1_10edm"]
+
+[node name="Rooms" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10edm")
+
+[node name="Table" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 5.0
+offset_right = 563.0
+offset_bottom = 648.0
+
+[node name="Table2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_top = -3.0
+offset_right = 882.0
+offset_bottom = 653.0
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 155.0
+offset_bottom = 87.0
+text = "Back
+"
+
+[node name="Default" type="Button" parent="."]
+offset_left = 19.0
+offset_top = 104.0
+offset_right = 155.0
+offset_bottom = 172.0
+text = "Default
+"
+
+[node name="Apply" type="Button" parent="."]
+offset_left = 21.0
+offset_top = 188.0
+offset_right = 157.0
+offset_bottom = 256.0
+text = "Apply
+"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Default" to="." method="_on_default_pressed"]
+[connection signal="pressed" from="Apply" to="." method="_on_apply_pressed"]
