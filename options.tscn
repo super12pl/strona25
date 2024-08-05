@@ -4,11 +4,7 @@
 
 [node name="Options" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_b3t04")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -59,7 +55,7 @@ custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "   > Width"
 
-[node name="width" type="TextEdit" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Width"]
+[node name="width" type="LineEdit" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Width"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
@@ -71,7 +67,7 @@ custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "   > Height"
 
-[node name="height" type="TextEdit" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Height"]
+[node name="height" type="LineEdit" parent="MarginContainer/VBoxContainer/Resolution/VBoxContainer/Height"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 

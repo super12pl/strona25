@@ -10,10 +10,10 @@ func _ready():
 	kolumny.text = str(global.kolumny)
 
 func _on_play_pressed():
-	global.players = int(gracze.get_line(0))
-	global.szeregi = int(szeregi.get_line(0))
-	global.kolumny = int(kolumny.get_line(0))
-	get_tree().change_scene_to_file("res://gameBoard.tscn")
+	global.players = int(gracze.text)
+	global.szeregi = int(szeregi.text)
+	global.kolumny = int(kolumny.text)
+	get_tree().change_scene_to_file("res://gra.tscn")
 
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://options.tscn")

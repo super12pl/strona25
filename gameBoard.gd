@@ -1,8 +1,8 @@
 extends TileMap
 ##Stałe
-var zielonepokojeindex = ["sala wideo","ruchomy pokój","pokój z tunelem","komora robotów","komora regeneracji","pusty pokój","sterownia"]
-var żółtepokojeindex = ["pokój z wirem","cela","ciemny pokój","komora chłodu","komora obrotowa","komora zakłócania","pokój ZRB","pokój luster"]
-var czerwonepokojeindex = ["wanna z kwasem","zalana komora","pokój pułapka","pokój iluzji","komora śmierci", "pokój paranoi","pokój zegarowy","komora pił"]
+var zielonepokojeindex = global.zielone
+var żółtepokojeindex = global.zulte
+var czerwonepokojeindex = global.czerwone
 var rng = RandomNumberGenerator.new()
 ##Zależne od użytkownika
 var zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","pokój z tunelem","pokój z tunelem","komora robotów","komora robotów","komora regeneracji","komora regeneracji"]
