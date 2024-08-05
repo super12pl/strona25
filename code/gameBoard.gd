@@ -1,8 +1,8 @@
 extends TileMap
 ##Stałe
 var zielonepokojeindex = global.zieloneIndex
-var żółtepokojeindex = global.zulteIndex
 var czerwonepokojeindex = global.czerwoneIndex
+var żółtepokojeindex = global.zulteIndex
 var rng = RandomNumberGenerator.new()
 ##Zależne od użytkownika
 var zielonepokoje = global.zielone
