@@ -13,7 +13,7 @@ func _ready():
 	height.text = str(get_window().size.y)
 	
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Menu.tscn")
+	get_tree().change_scene_to_file("res://scenes//Menu.tscn")
 
 func _on_apply_pressed():
 	global.width = int(width.text)

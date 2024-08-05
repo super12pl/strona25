@@ -1,13 +1,13 @@
 extends TileMap
 ##Stałe
-var zielonepokojeindex = global.zielone
-var żółtepokojeindex = global.zulte
-var czerwonepokojeindex = global.czerwone
+var zielonepokojeindex = global.zieloneIndex
+var żółtepokojeindex = global.zulteIndex
+var czerwonepokojeindex = global.czerwoneIndex
 var rng = RandomNumberGenerator.new()
 ##Zależne od użytkownika
-var zielonepokoje = ["sala wideo","ruchomy pokój","sterownia","pokój z tunelem","pokój z tunelem","pokój z tunelem","komora robotów","komora robotów","komora regeneracji","komora regeneracji"]
-var żółtepokoje = ["pokój z wirem","pokój z wirem","cela","cela","ciemny pokój","ciemny pokój","komora chłodu","komora chłodu","komora obrotowa","komora obrotowa","komora zakłócania","pokój ZRB","pokój ZRB","pokój luster"]
-var czerwonepokoje = ["wanna z kwasem","wanna z kwasem","zalana komora","zalana komora","pokój pułapka","pokój pułapka","pokój iluzji","komora śmierci","komora śmierci", "pokój paranoi","pokój zegarowy","komora pił","komora pił"]
+var zielonepokoje = global.zielone
+var żółtepokoje = global.żółte
+var czerwonepokoje = global.czerwone
 
 ## Called when the node enters the scene tree for the first time.🤓🤓🤓
 
@@ -45,4 +45,4 @@ func _ready():
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Menu.tscn")
+	get_tree().change_scene_to_file("res://scenes//Menu.tscn")

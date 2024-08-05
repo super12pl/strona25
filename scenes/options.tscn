@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://kyvhukv3i5qp"]
 
-[ext_resource type="Script" path="res://options.gd" id="1_b3t04"]
+[ext_resource type="Script" path="res://code/options.gd" id="1_vcmvj"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_b3t04")
+script = ExtResource("1_vcmvj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_direction = 2

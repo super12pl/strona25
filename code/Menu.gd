@@ -13,10 +13,10 @@ func _on_play_pressed():
 	global.players = int(gracze.text)
 	global.szeregi = int(szeregi.text)
 	global.kolumny = int(kolumny.text)
-	get_tree().change_scene_to_file("res://gra.tscn")
+	get_tree().change_scene_to_file("res://scenes//gra.tscn")
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://options.tscn")
+	get_tree().change_scene_to_file("res://scenes//options.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()

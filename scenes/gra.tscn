@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqj3s2cquk4xa"]
 
-[ext_resource type="PackedScene" uid="uid://cckc05uk0frwy" path="res://gameBoard.tscn" id="1_3ubt7"]
+[ext_resource type="PackedScene" uid="uid://cckc05uk0frwy" path="res://scenes/gameBoard.tscn" id="1_sx0l2"]
 
 [node name="Gra" type="Control"]
 layout_mode = 3
@@ -26,4 +26,4 @@ offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TileMap" parent="Control" instance=ExtResource("1_3ubt7")]
+[node name="TileMap" parent="Control" instance=ExtResource("1_sx0l2")]
