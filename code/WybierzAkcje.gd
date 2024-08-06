@@ -63,3 +63,11 @@ func _confirm():
 	player_actions.emit(actions)
 	print("gufa")
 	#nwm co ma sie dziać po zatwierdzeniu wiec zostawiam
+		if (Action3label.text != "Akcja 3" && Action1choice.get_selected_id() != -1 && Action2choice.get_selected_id() != -1) || (Action3label.text == "Akcja 3" && Action1choice.get_selected_id() != -1 && Action2choice.get_selected_id() != -1 && Action3choice.get_selected_id() != -1):
+			var wybraneRuchy
+			if Action3label.text != "Akcja 3":
+				wybraneRuchy = [Action1choice.get_selected_id(), Action2choice.get_selected_id()]
+			else:
+				wybraneRuchy = [Action1choice.get_selected_id(), Action2choice.get_selected_id(), Action3choice.get_selected_id()]
+			global.wybraneRuchy = wybraneRuchy
+			print(wybraneRuchy)

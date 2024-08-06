@@ -20,5 +20,7 @@ var plansza = []
 #nie dotykać
 var reloaded = false
 
+var wybraneRuchy = []
+
 func _ready():
 	get_window().size = Vector2i(width,height)
