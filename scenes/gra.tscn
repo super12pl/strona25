@@ -66,6 +66,5 @@ anchor_bottom = 1.0
 grow_vertical = 0
 
 [node name="WybierzAkcje" parent="Control" instance=ExtResource("3_gj0il")]
-position = Vector2(-543, 517)
 
 [connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]
