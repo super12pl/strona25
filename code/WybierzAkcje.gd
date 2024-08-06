@@ -59,8 +59,6 @@ func _on_action_3_choice_item_selected(index):
 		Action3choice.select(-1)
 
 func _confirm():
-	var actions = []
-	player_actions.emit(actions)
 	print("gufa")
 	#nwm co ma sie dziać po zatwierdzeniu wiec zostawiam
 	if (Action3label.text != "Akcja 3" && Action1choice.get_selected_id() != -1 && Action2choice.get_selected_id() != -1) || (Action3label.text == "Akcja 3" && Action1choice.get_selected_id() != -1 && Action2choice.get_selected_id() != -1 && Action3choice.get_selected_id() != -1):
@@ -70,3 +68,4 @@ func _confirm():
 		else:
 			wybraneRuchy = [Action1choice.get_selected_id(), Action2choice.get_selected_id(), Action3choice.get_selected_id()]
 		global.wybraneRuchy = wybraneRuchy
+		player_actions.emit(wybraneRuchy)
