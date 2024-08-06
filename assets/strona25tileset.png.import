@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6plphgmm6u"
-path="res://.godot/imported/strona25tilesetv2.png-6b52b01f3ee7b6dfbde4ba7a4cc756f3.ctex"
+uid="uid://b7ohr0f8mrrfl"
+path="res://.godot/imported/strona25tileset.png-54d9371a9d6ea509a08841fbdcc9f311.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://strona25tilesetv2.png"
-dest_files=["res://.godot/imported/strona25tilesetv2.png-6b52b01f3ee7b6dfbde4ba7a4cc756f3.ctex"]
+source_file="res://assets/strona25tileset.png"
+dest_files=["res://.godot/imported/strona25tileset.png-54d9371a9d6ea509a08841fbdcc9f311.ctex"]
 
 [params]
 

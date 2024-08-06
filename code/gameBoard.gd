@@ -2,14 +2,14 @@ extends TileMap
 ##Stałe
 var tilesetIndex = global.tilesetIndex
 var rng = RandomNumberGenerator.new()
+var kolumny = global.kolumny
+var szeregi = global.szeregi
 ##Zależne od użytkownika
 var pokoje = global.pulaPokoi
 
 ## Called when the node enters the scene tree for the first time.🤓🤓🤓
 
 func _ready():
-	var kolumny = global.kolumny
-	var szeregi = global.szeregi
 	##dodawanie pustych pokoi gdy normalnych jest za mało
 	if pokoje.size() < (kolumny*szeregi)-2:
 		for i in ((kolumny*szeregi)-2) - pokoje.size():
@@ -54,5 +54,7 @@ func _ready():
 						break
 func _input(event):
 	if event is InputEventMouseButton:
-		##będzie ogarniał faktyczne granie
-		print(local_to_map(event.position))
+		##ignoruje kliknięcia poza planszą
+		if local_to_map(event.position).x < szeregi and local_to_map(event.position).y < kolumny:
+			##będzie ogarniał faktyczne granie
+			print(local_to_map(event.position),Vector2(szeregi,kolumny))

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cckc05uk0frwy"]
 
-[ext_resource type="Texture2D" uid="uid://b7ohr0f8mrrfl" path="res://strona25tileset.png" id="1_kxtcj"]
+[ext_resource type="Texture2D" uid="uid://b7ohr0f8mrrfl" path="res://assets/strona25tileset.png" id="1_kxtcj"]
 [ext_resource type="Script" path="res://code/gameBoard.gd" id="1_wmbur"]
-[ext_resource type="Texture2D" uid="uid://du6plphgmm6u" path="res://strona25tilesetv2.png" id="2_24ms2"]
+[ext_resource type="Texture2D" uid="uid://du6plphgmm6u" path="res://assets/strona25tilesetv2.png" id="2_24ms2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pobub"]
 texture = ExtResource("1_kxtcj")
