@@ -69,6 +69,6 @@ offset_bottom = 40.0
 grow_horizontal = 2
 
 [node name="WybierzAkcje" parent="Control" instance=ExtResource("3_gj0il")]
-position = Vector2(-49, -1)
+position = Vector2(-543, 517)
 
 [connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]
