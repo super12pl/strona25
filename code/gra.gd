@@ -59,16 +59,15 @@ func _input(event):
 	if event.is_action_pressed("right_click"):
 		if plansza.local_to_map(event.position).x < szeregi and plansza.local_to_map(event.position).y < kolumny:
 			for i in range(0,tilesetIndex.size()):
-				if tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]) != -1:
-					var wyjasnienie = global.tileExplanation
-					
-					Wyjasnienie = Button.new()
+				if tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]) != -1 && global.zakryte[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]==false:
+					var wyjasnienie = global.tileExplanation	
+					Wyjasnienie.show()
 					div.add_child(Wyjasnienie)
 					Wyjasnienie.text = wyjasnienie[i][tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y])]
 					Wyjasnienie.pressed.connect(self._close_explanation.bind())
 					
 func _close_explanation():
-	Wyjasnienie.queue_free()
+	Wyjasnienie.hide()
 	
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes//Menu.tscn")
