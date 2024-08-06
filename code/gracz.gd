@@ -16,6 +16,7 @@ func move(coords: Vector2i):
 		tilemap.set_cell(0,coords,id,Vector2i(0,0))
 		tilemap.erase_cell(0,currentPosition)
 		currentPosition = coords
+		return true
 	else:
-		print("niepoprawne pole!")
+		return false
 

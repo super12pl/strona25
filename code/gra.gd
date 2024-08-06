@@ -27,12 +27,14 @@ func _input(event):
 						0:
 							print("Patrzenie na ",coords)
 						1:
-							gracz.move(coords)
-							typ.text = tile
-							for i in range(0,tilesetIndex.size()):
-								if tilesetIndex[i].has(tile):
-									plansza.set_cell(0,coords,1,Vector2i(tilesetIndex[i].find(tile,0),i))
-									break
+							if gracz.move(coords):
+								typ.text = tile
+								for i in range(0,tilesetIndex.size()):
+									if tilesetIndex[i].has(tile):
+										plansza.set_cell(0,coords,1,Vector2i(tilesetIndex[i].find(tile,0),i))
+										break
+							else:
+								zakolejkowaneAkcje.insert(0,1)
 						2:
 							print("Przesunięcie")
 						3:
