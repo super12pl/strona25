@@ -1,5 +1,7 @@
 extends Node
 
+signal player_actions(actions)
+
 @onready var Hbox = $Bar
 @onready var Action1choice = $Bar/Action1/Action1choice
 @onready var Action2choice = $Bar/Action2/Action2choice
@@ -57,5 +59,7 @@ func _on_action_3_choice_item_selected(index):
 		Action3choice.select(-1)
 
 func _confirm():
+	var actions = []
+	player_actions.emit(actions)
 	print("gufa")
 	#nwm co ma sie dziać po zatwierdzeniu wiec zostawiam
