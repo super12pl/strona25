@@ -6,6 +6,7 @@ var kolumny = global.kolumny
 var szeregi = global.szeregi
 ##Zależne od użytkownika
 var pokoje = global.pulaPokoi
+@onready var typ = $"../../Control2/VBoxContainer/typ"
 
 ## Called when the node enters the scene tree for the first time.🤓🤓🤓
 
@@ -62,6 +63,7 @@ func _input(event):
 				##będzie ogarniał faktyczne granie
 				var tile = global.plansza[local_to_map(event.position).x][local_to_map(event.position).y]
 				print(local_to_map(event.position),tile)
+				typ.text = tile
 				for i in range(0,tilesetIndex.size()):
 					if tilesetIndex[i].has(tile):
 						set_cell(0,local_to_map(event.position),1,Vector2i(tilesetIndex[i].find(tile,0),i))
