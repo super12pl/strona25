@@ -70,4 +70,3 @@ func _confirm():
 			else:
 				wybraneRuchy = [Action1choice.get_selected_id(), Action2choice.get_selected_id(), Action3choice.get_selected_id()]
 			global.wybraneRuchy = wybraneRuchy
-			print(wybraneRuchy)
