@@ -12,6 +12,7 @@ var pokoje = global.pulaPokoi
 func _ready():
 	global.plansza = []
 	for i in kolumny:
+		global.zakryte.append([])
 		global.plansza.append([])
 	##dodawanie pustych pokoi gdy normalnych jest za mało
 	if pokoje.size() < (kolumny*szeregi)-2:
@@ -47,6 +48,7 @@ func _ready():
 				tile = "pokój centralny"
 				set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(0,5))
 				global.plansza[kolumna].append(tile)
+				global.zakryte[kolumna].append(false)
 			else:
 				if distanceFromCenter>innerPoolDistance:
 					tile = outerPool.pop_front()
@@ -54,4 +56,5 @@ func _ready():
 					tile = innerPool.pop_front()
 				set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(3,5))
 				global.plansza[kolumna].append(tile)
+				global.zakryte[kolumna].append(true)
 

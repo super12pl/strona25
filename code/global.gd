@@ -16,6 +16,7 @@ var pulaPokoi = ["sala wideo","ruchomy pokój","pokój z tunelem","pokój z tune
 @onready var height := get_window().size.y
 
 var plansza = []
+var zakryte = []
 
 #nie dotykać
 var reloaded = false

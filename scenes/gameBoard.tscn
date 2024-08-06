@@ -72,10 +72,13 @@ texture_region_size = Vector2i(100, 100)
 1:5/0 = 0
 2:5/0 = 0
 3:5/0 = 0
+3:5/0/custom_data_0 = true
 4:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sqbjv"]
 tile_size = Vector2i(100, 100)
+custom_data_layer_0/name = "hidden"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_pobub")
 sources/1 = SubResource("TileSetAtlasSource_lp8r3")
 
