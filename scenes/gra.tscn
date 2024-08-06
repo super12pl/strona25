@@ -26,8 +26,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Control2" type="Control" parent="Gra"]
-layout_mode = 3
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -38,7 +38,7 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Gra/Control2"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Control2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -50,9 +50,11 @@ offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="typ" type="Label" parent="Gra/Control2/VBoxContainer"]
+[node name="typ" type="Label" parent="Control2/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Gra/Control2/VBoxContainer"]
+[node name="Button" type="Button" parent="Control2/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
+
+[connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]

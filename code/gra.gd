@@ -1,14 +1,13 @@
 extends Node2D
 
-@onready var typ = $Control2/VBoxContainer/typ
+@onready var typ = $"../Control2/VBoxContainer/typ"
 @onready var plansza = $Control/TileMap
 @onready var info = $Control/Control/TileMap
 var szeregi = global.szeregi
 var kolumny = global.kolumny
 var tilesetIndex = global.tilesetIndex
 
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes//Menu.tscn")
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -29,3 +28,7 @@ func _input(event):
 		if plansza.local_to_map(event.position).x < szeregi and plansza.local_to_map(event.position).y < kolumny:
 			for i in range(0,tilesetIndex.size()):
 				print(tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]))
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://scenes//Menu.tscn")
