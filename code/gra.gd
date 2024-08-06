@@ -7,7 +7,11 @@ var szeregi = global.szeregi
 var kolumny = global.kolumny
 var tilesetIndex = global.tilesetIndex
 
-
+func _ready():
+	var gracz = load("res://scenes/gracz.tscn").instantiate()
+	add_child(gracz)
+	gracz.spawn(0)
+	
 
 func _input(event):
 	if event is InputEventMouseButton:
