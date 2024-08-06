@@ -69,8 +69,10 @@ func _confirm():
 		global.wybraneRuchy = wybraneRuchy
 		player_actions.emit(wybraneRuchy)
 		Confirm.disabled = true
+		aBtn.disabled = true
 
 
 func _on_gra_programming_phase():
 	Confirm.disabled = false
+	aBtn.disabled = false
 	
