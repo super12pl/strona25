@@ -12,7 +12,6 @@ pokoje jeszcze nie zaprogramowane:
 	ciemny pokój
 	komora chłodu
 	komora obrotowa
-	fałszywe wyjście
 	pokój ZRB
 	pokój luster
 	wanna z kwasem
