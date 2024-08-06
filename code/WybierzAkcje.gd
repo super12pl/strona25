@@ -68,3 +68,11 @@ func _confirm():
 			wybraneRuchy = [Action1choice.get_selected_id(), Action2choice.get_selected_id(), Action3choice.get_selected_id()]
 		global.wybraneRuchy = wybraneRuchy
 		player_actions.emit(wybraneRuchy)
+		Confirm.disabled = true
+		aBtn.disabled = true
+
+
+func _on_gra_programming_phase():
+	Confirm.disabled = false
+	aBtn.disabled = false
+	
