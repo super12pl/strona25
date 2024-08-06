@@ -3,6 +3,8 @@ extends Node2D
 @onready var typ = $"../Control2/VBoxContainer/typ"
 @onready var plansza = $Control/TileMap
 @onready var info = $Control/Control/TileMap
+@onready var div = $Control
+var Wyjasnienie = Button.new()
 var szeregi = global.szeregi
 var kolumny = global.kolumny
 var tilesetIndex = global.tilesetIndex
@@ -43,15 +45,21 @@ func _input(event):
 							print("Specjał")
 							
 	if event.is_action_pressed("right_click"):
-		##ignoruje kliknięcia poza planszą
 		if plansza.local_to_map(event.position).x < szeregi and plansza.local_to_map(event.position).y < kolumny:
 			for i in range(0,tilesetIndex.size()):
-				print(tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]))
-
-
+				if tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]) != -1:
+					var wyjasnienie = global.tileExplanation
+					
+					Wyjasnienie = Button.new()
+					div.add_child(Wyjasnienie)
+					Wyjasnienie.text = wyjasnienie[i][tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y])]
+					Wyjasnienie.pressed.connect(self._close_explanation.bind())
+					
+func _close_explanation():
+	Wyjasnienie.queue_free()
+	
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://scenes//Menu.tscn")
-
 
 func _on_wybierz_akcje_player_actions(actions):
 	zakolejkowaneAkcje = actions
