@@ -20,3 +20,10 @@ func move(coords: Vector2i):
 	else:
 		return false
 
+func look(coords: Vector2i):
+	var tilemap = get_node("TileMap")
+	if [tilemap.get_neighbor_cell(currentPosition,0),tilemap.get_neighbor_cell(currentPosition,4),tilemap.get_neighbor_cell(currentPosition,8),tilemap.get_neighbor_cell(currentPosition,12)].has(coords) and global.zakryte[coords.x][coords.y]:	
+		return true
+	else:
+		return false
+
