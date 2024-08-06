@@ -5,7 +5,11 @@
 
 [node name="Gra" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ku1yj")
 
 [node name="Control" type="Control" parent="."]
@@ -16,12 +20,29 @@ offset_bottom = 40.0
 
 [node name="TileMap" parent="Control" instance=ExtResource("1_sx0l2")]
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1108.0
-offset_top = 614.0
-offset_right = 1145.0
-offset_bottom = 645.0
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -37.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Exit"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control2/Button" to="." method="_on_button_pressed"]
