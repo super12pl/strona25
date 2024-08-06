@@ -6,10 +6,12 @@
 script = ExtResource("1_506xi")
 
 [node name="Bar" type="HBoxContainer" parent="."]
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 494.0
-offset_bottom = 84.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 490.0
+grow_vertical = 0
 
 [node name="Label" type="Label" parent="Bar"]
 layout_mode = 2
