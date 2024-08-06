@@ -10,6 +10,9 @@ var pokoje = global.pulaPokoi
 ## Called when the node enters the scene tree for the first time.🤓🤓🤓
 
 func _ready():
+	global.plansza = []
+	for i in kolumny:
+		global.plansza.append([])
 	##dodawanie pustych pokoi gdy normalnych jest za mało
 	if pokoje.size() < (kolumny*szeregi)-2:
 		for i in ((kolumny*szeregi)-2) - pokoje.size():
@@ -43,6 +46,7 @@ func _ready():
 			if distanceFromCenter == 0:
 				tile = "pokój centralny"
 				set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(0,5))
+				global.plansza[kolumna].append(tile)
 			else:
 				if distanceFromCenter>innerPoolDistance:
 					tile = outerPool.pop_front()
@@ -53,6 +57,7 @@ func _ready():
 						#odkrywanie
 						#set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(tilesetIndex[i].find(tile,0),i))
 						set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(3,5))
+						global.plansza[kolumna].append(tile)
 						break
 func _input(event):
 	if event is InputEventMouseButton:
@@ -60,4 +65,4 @@ func _input(event):
 			##ignoruje kliknięcia poza planszą
 			if local_to_map(event.position).x < szeregi and local_to_map(event.position).y < kolumny:
 				##będzie ogarniał faktyczne granie
-				print(local_to_map(event.position),Vector2(szeregi,kolumny))
+				print(local_to_map(event.position),global.plansza[local_to_map(event.position).x][local_to_map(event.position).y])
