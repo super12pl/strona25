@@ -55,16 +55,4 @@ func _ready():
 					tile = innerPool.pop_front()
 				set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(3,5))
 				global.plansza[kolumna].append(tile)
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.is_action_pressed("left_click"):
-			##ignoruje kliknięcia poza planszą
-			if local_to_map(event.position).x < szeregi and local_to_map(event.position).y < kolumny:
-				##będzie ogarniał faktyczne granie
-				var tile = global.plansza[local_to_map(event.position).x][local_to_map(event.position).y]
-				print(local_to_map(event.position),tile)
-				typ.text = tile
-				for i in range(0,tilesetIndex.size()):
-					if tilesetIndex[i].has(tile):
-						set_cell(0,local_to_map(event.position),1,Vector2i(tilesetIndex[i].find(tile,0),i))
-						break
+
