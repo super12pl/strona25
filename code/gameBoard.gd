@@ -50,11 +50,14 @@ func _ready():
 					tile = innerPool.pop_front()
 				for i in range(0,tilesetIndex.size()):
 					if tilesetIndex[i].has(tile):
-						set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(tilesetIndex[i].find(tile,0),i))
+						#odkrywanie
+						#set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(tilesetIndex[i].find(tile,0),i))
+						set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(3,5))
 						break
 func _input(event):
 	if event is InputEventMouseButton:
-		##ignoruje kliknięcia poza planszą
-		if local_to_map(event.position).x < szeregi and local_to_map(event.position).y < kolumny:
-			##będzie ogarniał faktyczne granie
-			print(local_to_map(event.position),Vector2(szeregi,kolumny))
+		if event.is_action_pressed("left_click"):
+			##ignoruje kliknięcia poza planszą
+			if local_to_map(event.position).x < szeregi and local_to_map(event.position).y < kolumny:
+				##będzie ogarniał faktyczne granie
+				print(local_to_map(event.position),Vector2(szeregi,kolumny))
