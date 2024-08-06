@@ -22,9 +22,14 @@ anchors_preset = 0
 [node name="TileMap" parent="Gra/Control" instance=ExtResource("1_sx0l2")]
 
 [node name="Control" type="Control" parent="Gra/Control"]
-anchors_preset = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 40.0
+grow_horizontal = 2
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 1
@@ -65,6 +70,13 @@ anchor_bottom = 1.0
 grow_vertical = 0
 
 [node name="WybierzAkcje" parent="Control" instance=ExtResource("3_gj0il")]
+
+[node name="Opis" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
 
 [connection signal="programmingPhase" from="Gra" to="Control/WybierzAkcje" method="_on_gra_programming_phase"]
 [connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]

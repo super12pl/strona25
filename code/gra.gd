@@ -3,8 +3,8 @@ signal programmingPhase
 
 @onready var typ = $"../Control2/VBoxContainer/typ"
 @onready var plansza = $Control/TileMap
-@onready var info = $Control/Control/TileMap
-@onready var div = $Control
+@onready var div = $"../Opis"
+
 var Wyjasnienie = Button.new()
 var szeregi = global.szeregi
 var kolumny = global.kolumny
@@ -64,7 +64,7 @@ func _input(event):
 		if plansza.local_to_map(event.position).x < szeregi and plansza.local_to_map(event.position).y < kolumny:
 			for i in range(0,tilesetIndex.size()):
 				if tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]) != -1 && global.zakryte[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]==false:
-					var wyjasnienie = global.tileExplanation	
+					var wyjasnienie = global.tileExplanation
 					Wyjasnienie.show()
 					div.add_child(Wyjasnienie)
 					Wyjasnienie.text = wyjasnienie[i][tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y])]
