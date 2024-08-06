@@ -1,7 +1,64 @@
-[gd_scene load_steps=2 format=3 uid="uid://unre6k38il1l"]
+[gd_scene load_steps=18 format=3 uid="uid://unre6k38il1l"]
+
+[ext_resource type="Texture2D" uid="uid://l36vw6jrhcni" path="res://assets/gracze/gracz1.png" id="1_5stn5"]
+[ext_resource type="Texture2D" uid="uid://7o8kat0lm8ln" path="res://assets/gracze/gracz2.png" id="2_41vvm"]
+[ext_resource type="Texture2D" uid="uid://cq4yb2ad40w8w" path="res://assets/gracze/gracz3.png" id="3_eb1d6"]
+[ext_resource type="Texture2D" uid="uid://bw5c3l8olunfx" path="res://assets/gracze/gracz4.png" id="4_i8psj"]
+[ext_resource type="Texture2D" uid="uid://c8yjpgjivism1" path="res://assets/gracze/gracz5.png" id="5_0pyq6"]
+[ext_resource type="Texture2D" uid="uid://bc4nq24roqtvl" path="res://assets/gracze/gracz6.png" id="6_gnct3"]
+[ext_resource type="Texture2D" uid="uid://jcsf8ffqkbcb" path="res://assets/gracze/gracz7.png" id="7_uqglg"]
+[ext_resource type="Texture2D" uid="uid://dcw7fmcnoy6qx" path="res://assets/gracze/gracz8.png" id="8_puehw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67hxo"]
+texture = ExtResource("1_5stn5")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_24dux"]
+texture = ExtResource("2_41vvm")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pveof"]
+texture = ExtResource("3_eb1d6")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rnhr"]
+texture = ExtResource("4_i8psj")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7hpg"]
+texture = ExtResource("5_0pyq6")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nxmy"]
+texture = ExtResource("6_gnct3")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxb3x"]
+texture = ExtResource("7_uqglg")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kj8v"]
+texture = ExtResource("8_puehw")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_krwdf"]
 tile_size = Vector2i(100, 100)
+sources/0 = SubResource("TileSetAtlasSource_67hxo")
+sources/1 = SubResource("TileSetAtlasSource_24dux")
+sources/2 = SubResource("TileSetAtlasSource_pveof")
+sources/3 = SubResource("TileSetAtlasSource_4rnhr")
+sources/4 = SubResource("TileSetAtlasSource_d7hpg")
+sources/5 = SubResource("TileSetAtlasSource_6nxmy")
+sources/6 = SubResource("TileSetAtlasSource_vxb3x")
+sources/7 = SubResource("TileSetAtlasSource_8kj8v")
 
 [node name="Gracz" type="Node2D"]
 
