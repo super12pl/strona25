@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqj3s2cquk4xa"]
+[gd_scene load_steps=4 format=3 uid="uid://bqj3s2cquk4xa"]
 
 [ext_resource type="Script" path="res://code/gra.gd" id="1_06ssy"]
 [ext_resource type="PackedScene" uid="uid://cckc05uk0frwy" path="res://scenes/gameBoard.tscn" id="1_sx0l2"]
+[ext_resource type="PackedScene" uid="uid://ltxvxekf42si" path="res://scenes/WybierzAkcje.tscn" id="3_gj0il"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -56,5 +57,17 @@ layout_mode = 2
 [node name="Button" type="Button" parent="Control2/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="WybierzAkcje" parent="Control" instance=ExtResource("3_gj0il")]
 
 [connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]
