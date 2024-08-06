@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var typ = $"../Control2/VBoxContainer/typ"
 @onready var plansza = $Control/TileMap
-@onready var info = $Control/Control/TileMap
 var szeregi = global.szeregi
 var kolumny = global.kolumny
 var tilesetIndex = global.tilesetIndex

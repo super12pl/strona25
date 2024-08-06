@@ -6,7 +6,6 @@ var kolumny = global.kolumny
 var szeregi = global.szeregi
 ##Zależne od użytkownika
 var pokoje = global.pulaPokoi
-@onready var typ = $"../../Control2/VBoxContainer/typ"
 
 ## Called when the node enters the scene tree for the first time.🤓🤓🤓
 
