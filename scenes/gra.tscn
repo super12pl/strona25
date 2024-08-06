@@ -71,3 +71,4 @@ grow_horizontal = 2
 [node name="WybierzAkcje" parent="Control" instance=ExtResource("3_gj0il")]
 
 [connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]
+[connection signal="player_actions" from="Control/WybierzAkcje" to="Gra" method="_on_wybierz_akcje_player_actions"]
