@@ -1,4 +1,5 @@
 extends Node2D
+signal programmingPhase
 
 @onready var typ = $"../Control2/VBoxContainer/typ"
 @onready var plansza = $Control/TileMap
@@ -49,9 +50,12 @@ func _input(event):
 						2:
 							print("Przesunięcie")
 						3:
-							print("Pchanie na ",coords)
+							print("Pchanie na ",coords) ##zrobi po prostu gracz.move(coords) u tego drugiego
 						4:
 							print("Specjał")
+				if(zakolejkowaneAkcje.size()==0):
+					programmingPhase.emit()
+					
 							
 							
 							
