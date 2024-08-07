@@ -61,14 +61,16 @@ func _input(event):
 					
 							
 	if event.is_action_pressed("right_click"):
-		if plansza.local_to_map(event.position).x < szeregi and plansza.local_to_map(event.position).y < kolumny:
+		var coords = plansza.local_to_map(event.position)
+		if coords.x < szeregi and coords.y < kolumny:
 			for i in range(0,tilesetIndex.size()):
-				if tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]) != -1 && global.zakryte[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y]==false:
+				if tilesetIndex[i].find(global.plansza[coords.x][coords.y]) != -1 && plansza.get_cell_atlas_coords(0,Vector2(coords.x,coords.y)) != Vector2i(3,5):
 					var wyjasnienie = global.tileExplanation
 					Wyjasnienie.show()
 					div.add_child(Wyjasnienie)
-					Wyjasnienie.text = wyjasnienie[i][tilesetIndex[i].find(global.plansza[plansza.local_to_map(event.position).x][plansza.local_to_map(event.position).y])]
+					Wyjasnienie.text = wyjasnienie[i][tilesetIndex[i].find(global.plansza[coords.x][coords.y])]
 					Wyjasnienie.pressed.connect(self._close_explanation.bind())
+					gracz.death(0)
 					
 func _close_explanation():
 	Wyjasnienie.hide()

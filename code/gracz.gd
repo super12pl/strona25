@@ -9,6 +9,9 @@ func spawn(id: int):
 	get_node("TileMap").set_cell(0,currentPosition,id,Vector2i(0,0))
 	id = id
 	
+func death(id:int):
+	get_node("TileMap").set_cell(0,currentPosition,id,Vector2i(1,0))
+	id = id
 #Rusza gracza do podanej pozycji jeśli jest sąsiadująca
 func move(coords: Vector2i):
 	var tilemap = get_node("TileMap")
