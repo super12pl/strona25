@@ -19,6 +19,11 @@ var pulaPokoi = ["sala wideo","ruchomy pokój","pokój z tunelem","pokój z tune
 var plansza = []
 var zakryte = []
 
+var round = 1
+var maxRounds = 10
+
+var zakolejkowaneAkcjeWszytkich = [] ##ta zmienna będzie wielka
+
 #nie dotykać
 var reloaded = false
 

@@ -2,6 +2,7 @@ extends Node2D
 signal programmingPhase
 
 @onready var typ = $"../Control2/VBoxContainer/typ"
+@onready var runda = $"../Control2/VBoxContainer/runda"
 @onready var plansza = $Control/TileMap
 @onready var div = $"../Opis"
 
@@ -14,6 +15,8 @@ var zakolejkowaneAkcje = [] #kolejka akcji
 var lookedAt = null
 
 func _ready():
+	global.round = 1
+	runda.text = "Runda: " + str(global.round) + "/" + str(global.maxRounds)
 	add_child(gracz)
 	gracz.spawn(0)
 	
@@ -57,7 +60,11 @@ func _input(event):
 						4:
 							print("Specjał")
 				if(zakolejkowaneAkcje.size()==0):
+					##to dopiero jak wszyscy gracze zrobią turę, może przez wspólną kolejkę akcji?
+					global.round += 1
+					runda.text = "Runda: " + str(global.round) + "/" + str(global.maxRounds)
 					programmingPhase.emit()
+					
 					
 							
 	if event.is_action_pressed("right_click"):

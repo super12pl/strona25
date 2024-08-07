@@ -58,6 +58,10 @@ grow_vertical = 0
 [node name="typ" type="Label" parent="Control2/VBoxContainer"]
 layout_mode = 2
 
+[node name="runda" type="Label" parent="Control2/VBoxContainer"]
+layout_mode = 2
+text = "Runda: 1/10"
+
 [node name="Button" type="Button" parent="Control2/VBoxContainer"]
 layout_mode = 2
 text = "Exit"

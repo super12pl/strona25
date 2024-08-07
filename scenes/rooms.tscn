@@ -53,6 +53,7 @@ text = "Apply
 "
 
 [node name="Reset" type="Button" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 184.0
 offset_right = 156.0

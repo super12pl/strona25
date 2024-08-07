@@ -65,6 +65,19 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 text = "5"
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+text = "Ilość rund"
+
+[node name="rundy" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "10"
+
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
