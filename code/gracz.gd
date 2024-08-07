@@ -19,6 +19,7 @@ func look(coords: Vector2i):
 		return true
 	else:
 		return false
+		
 
 #Rusza gracza do podanej pozycji jeśli jest sąsiadująca
 func move(coords: Vector2i):
