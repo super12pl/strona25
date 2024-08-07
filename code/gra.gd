@@ -59,11 +59,11 @@ func _input(event):
 							print("Pchanie na ",coords) ##zrobi po prostu gracz.move(coords) u tego drugiego
 						4:
 							print("Specjał")
-				if(zakolejkowaneAkcje.size()==0):
-					##to dopiero jak wszyscy gracze zrobią turę, może przez wspólną kolejkę akcji?
-					global.round += 1
-					runda.text = "Runda: " + str(global.round) + "/" + str(global.maxRounds)
-					programmingPhase.emit()
+					if(zakolejkowaneAkcje.size()==0):
+						##to dopiero jak wszyscy gracze zrobią turę, może przez wspólną kolejkę akcji?
+						global.round += 1
+						runda.text = "Runda: " + str(global.round) + "/" + str(global.maxRounds)
+						programmingPhase.emit()
 					
 					
 							
