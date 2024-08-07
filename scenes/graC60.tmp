@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqj3s2cquk4xa"]
+
+[ext_resource type="Script" path="res://code/gra.gd" id="1_06ssy"]
+[ext_resource type="PackedScene" uid="uid://cckc05uk0frwy" path="res://scenes/gameBoard.tscn" id="1_sx0l2"]
+[ext_resource type="PackedScene" uid="uid://ltxvxekf42si" path="res://scenes/WybierzAkcje.tscn" id="3_gj0il"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gra" type="Node2D" parent="."]
+script = ExtResource("1_06ssy")
+
+[node name="Control" type="Control" parent="Gra"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TileMap" parent="Gra/Control" instance=ExtResource("1_sx0l2")]
+
+[node name="Control" type="Control" parent="Gra/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="typ" type="Label" parent="Control2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control2/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="WybierzAkcje" parent="Control" instance=ExtResource("3_gj0il")]
+
+[node name="Opis" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[connection signal="programmingPhase" from="Gra" to="Control/WybierzAkcje" method="_on_gra_programming_phase"]
+[connection signal="pressed" from="Control2/VBoxContainer/Button" to="Gra" method="_on_button_pressed"]
+[connection signal="player_actions" from="Control/WybierzAkcje" to="Gra" method="_on_wybierz_akcje_player_actions"]

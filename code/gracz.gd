@@ -66,7 +66,7 @@ func move(coords: Vector2i):
 			"pokój iluzji":
 				print(room)
 			"komora śmierci":
-				print(room)
+				self.death(self.id)
 			"pokój zegarowy":
 				print(room)
 			"pokój paranoi":
