@@ -45,13 +45,24 @@ text = "Default
 
 [node name="Apply" type="Button" parent="."]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 188.0
-offset_right = 157.0
-offset_bottom = 256.0
+offset_left = 17.0
+offset_top = 277.0
+offset_right = 153.0
+offset_bottom = 345.0
 text = "Apply
+"
+
+[node name="Reset" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 184.0
+offset_right = 156.0
+offset_bottom = 261.0
+text = "
+Reset
+
 "
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Default" to="." method="_on_default_pressed"]
 [connection signal="pressed" from="Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

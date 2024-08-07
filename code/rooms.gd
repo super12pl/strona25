@@ -65,3 +65,8 @@ func _on_default_pressed():
 	
 func _on_apply_pressed():
 	global.pulaPokoi = rooms
+
+func _on_reset_pressed():
+	rooms = []
+	global.pulaPokoi = []
+	get_tree().reload_current_scene()
