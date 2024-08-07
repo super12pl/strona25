@@ -70,7 +70,6 @@ func _input(event):
 					div.add_child(Wyjasnienie)
 					Wyjasnienie.text = wyjasnienie[i][tilesetIndex[i].find(global.plansza[coords.x][coords.y])]
 					Wyjasnienie.pressed.connect(self._close_explanation.bind())
-					gracz.death(0)
 					
 func _close_explanation():
 	Wyjasnienie.hide()

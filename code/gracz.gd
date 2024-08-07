@@ -1,5 +1,4 @@
 extends Node2D
-var beingTeleported = false 
 var kolumny = global.kolumny
 var szeregi = global.szeregi
 var currentPosition = Vector2i(int(ceil(kolumny/2)),int(ceil(szeregi/2)))
@@ -22,10 +21,9 @@ func look(coords: Vector2i):
 		return false
 		
 #Rusza gracza do podanej pozycji jeśli jest sąsiadująca
-func move(coords: Vector2i):
+func move(coords: Vector2i,beingTeleported: bool = false):
 	var tilemap = get_node("TileMap")
-	if [tilemap.get_neighbor_cell(currentPosition,0),tilemap.get_neighbor_cell(currentPosition,4),tilemap.get_neighbor_cell(currentPosition,8),tilemap.get_neighbor_cell(currentPosition,12)].has(coords) || beingTeleported == true:
-		beingTeleported = false
+	if [tilemap.get_neighbor_cell(currentPosition,0),tilemap.get_neighbor_cell(currentPosition,4),tilemap.get_neighbor_cell(currentPosition,8),tilemap.get_neighbor_cell(currentPosition,12)].has(coords) or beingTeleported == true:
 		tilemap.set_cell(0,coords,id,Vector2i(0,0))
 		tilemap.erase_cell(0,currentPosition)
 		currentPosition = coords
@@ -46,8 +44,7 @@ func move(coords: Vector2i):
 			"komora robotów":
 				print(room)
 			"pokój z wirem":
-				beingTeleported = true
-				self.move(Vector2i(2,2))
+				self.move(Vector2i(2,2),true)
 			"cela":
 				print(room)
 			"ciemny pokój":
