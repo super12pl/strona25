@@ -8,6 +8,7 @@ var which = true
 
 @onready var Vbox = $Table
 @onready var Vbox2 = $Table2
+@onready var Step = $Step
 
 func _ready():
 	if !reloaded:
@@ -48,8 +49,9 @@ func _ready():
 			removeBtn.pressed.connect(self._remove.bind(room, send))
 			
 func _add(name, send):
-	rooms.append(name)
-	send.text = str(int(send.text)+1)
+	for i in range(0,int(Step.text)):
+		rooms.append(name)
+		send.text = str(int(send.text)+1)
 
 func _remove(name, send):
 	if name in rooms:
