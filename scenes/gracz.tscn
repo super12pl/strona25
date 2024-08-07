@@ -10,60 +10,68 @@
 [ext_resource type="Texture2D" uid="uid://jcsf8ffqkbcb" path="res://assets/gracze/gracz7.png" id="7_uqglg"]
 [ext_resource type="Texture2D" uid="uid://dcw7fmcnoy6qx" path="res://assets/gracze/gracz8.png" id="8_puehw"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67hxo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbh1p"]
 texture = ExtResource("1_5stn5")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_24dux"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehu0q"]
 texture = ExtResource("2_41vvm")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pveof"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7y8mk"]
 texture = ExtResource("3_eb1d6")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rnhr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_243m4"]
 texture = ExtResource("4_i8psj")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7hpg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3weg"]
 texture = ExtResource("5_0pyq6")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nxmy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6ho2"]
 texture = ExtResource("6_gnct3")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxb3x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68wvl"]
 texture = ExtResource("7_uqglg")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kj8v"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddf2v"]
 texture = ExtResource("8_puehw")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
+1:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_krwdf"]
+[sub_resource type="TileSet" id="TileSet_m830d"]
 tile_size = Vector2i(100, 100)
-sources/0 = SubResource("TileSetAtlasSource_67hxo")
-sources/1 = SubResource("TileSetAtlasSource_24dux")
-sources/2 = SubResource("TileSetAtlasSource_pveof")
-sources/3 = SubResource("TileSetAtlasSource_4rnhr")
-sources/4 = SubResource("TileSetAtlasSource_d7hpg")
-sources/5 = SubResource("TileSetAtlasSource_6nxmy")
-sources/6 = SubResource("TileSetAtlasSource_vxb3x")
-sources/7 = SubResource("TileSetAtlasSource_8kj8v")
+sources/0 = SubResource("TileSetAtlasSource_qbh1p")
+sources/1 = SubResource("TileSetAtlasSource_ehu0q")
+sources/2 = SubResource("TileSetAtlasSource_7y8mk")
+sources/3 = SubResource("TileSetAtlasSource_243m4")
+sources/4 = SubResource("TileSetAtlasSource_k3weg")
+sources/5 = SubResource("TileSetAtlasSource_n6ho2")
+sources/6 = SubResource("TileSetAtlasSource_68wvl")
+sources/7 = SubResource("TileSetAtlasSource_ddf2v")
 
 [node name="Gracz" type="Node2D"]
 script = ExtResource("1_arbel")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_krwdf")
+tile_set = SubResource("TileSet_m830d")
 format = 2
