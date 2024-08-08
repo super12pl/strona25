@@ -38,12 +38,14 @@ func move_room(ArrowMenu, Board, coords: Vector2i,beingTeleported: bool = false)
 	Left.text = "◀️"
 	Right.text = "▶️"
 	
-	if(self.currentPosition[0] != 2):
-		ArrowMenu.add_child(Up)
-		ArrowMenu.add_child(Down)
-	if(self.currentPosition[1] != 2):
-		ArrowMenu.add_child(Left)
-		ArrowMenu.add_child(Right)
+	if(global.buttonsCreated == false):
+		if(self.currentPosition[0] != 2):
+			ArrowMenu.add_child(Up)
+			ArrowMenu.add_child(Down)
+		if(self.currentPosition[1] != 2):
+			ArrowMenu.add_child(Left)
+			ArrowMenu.add_child(Right)
+		global.buttonsCreated = true
 	
 func _move_room_handle(direction,Up,Down,Left,Right,ArrowMenu, Board, coords):
 	var misc
@@ -122,6 +124,10 @@ func _move_room_handle(direction,Up,Down,Left,Right,ArrowMenu, Board, coords):
 	ArrowMenu.remove_child(Down)
 	ArrowMenu.remove_child(Left)
 	ArrowMenu.remove_child(Right)
+	
+	global.buttonsCreated = false
+	
+	return true
 			
 #Rusza gracza do podanej pozycji jeśli jest sąsiadująca
 func move(coords: Vector2i,beingTeleported: bool = false, beingRoomMoved: bool = false):
