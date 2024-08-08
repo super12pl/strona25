@@ -47,6 +47,8 @@ func move_room(ArrowMenu, Board, coords: Vector2i,beingTeleported: bool = false)
 			ArrowMenu.add_child(Right)
 		global.buttonsCreated = true
 	
+	return true
+	
 func _move_room_handle(direction,Up,Down,Left,Right,ArrowMenu, Board, coords):
 	var misc
 	match direction:
@@ -126,8 +128,6 @@ func _move_room_handle(direction,Up,Down,Left,Right,ArrowMenu, Board, coords):
 	ArrowMenu.remove_child(Right)
 	
 	global.buttonsCreated = false
-	
-	return true
 			
 #Rusza gracza do podanej pozycji jeśli jest sąsiadująca
 func move(coords: Vector2i,beingTeleported: bool = false, beingRoomMoved: bool = false):

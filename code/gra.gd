@@ -56,7 +56,7 @@ func _input(event):
 								zakolejkowaneAkcje.insert(0,1)
 						2:
 							if gracz.move_room(MoveRoomArrows, plansza, gracz.currentPosition):
-								typ.text = tile
+								global.buttonsCreated = true;
 							else:
 								zakolejkowaneAkcje.insert(0,2)
 						3:
