@@ -5,6 +5,7 @@ signal programmingPhase
 @onready var runda = $"../Control2/VBoxContainer/runda"
 @onready var plansza = $Control/TileMap
 @onready var div = $"../Opis"
+@onready var MoveRoomArrows = $"../MoveRoomArrows"
 
 var Wyjasnienie = Button.new()
 var szeregi = global.szeregi
@@ -54,18 +55,20 @@ func _input(event):
 							else:
 								zakolejkowaneAkcje.insert(0,1)
 						2:
-							print("Przesunięcie")
+							if gracz.move_room(MoveRoomArrows, plansza, gracz.currentPosition):
+								typ.text = tile
+							else:
+								zakolejkowaneAkcje.insert(0,2)
 						3:
 							print("Pchanie na ",coords) ##zrobi po prostu gracz.move(coords) u tego drugiego
 						4:
 							print("Specjał")
+							
 					if(zakolejkowaneAkcje.size()==0):
 						##to dopiero jak wszyscy gracze zrobią turę, może przez wspólną kolejkę akcji?
 						global.round += 1
 						runda.text = "Runda: " + str(global.round) + "/" + str(global.maxRounds)
-						programmingPhase.emit()
-					
-					
+						programmingPhase.emit()					
 							
 	if event.is_action_pressed("right_click"):
 		var coords = plansza.local_to_map(event.position)

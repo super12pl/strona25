@@ -26,6 +26,7 @@ var zakolejkowaneAkcjeWszytkich = [] ##ta zmienna będzie wielka
 
 #nie dotykać
 var reloaded = false
+var AllUncovered = false
 
 var wybraneRuchy = []
 

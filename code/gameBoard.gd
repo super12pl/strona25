@@ -54,7 +54,13 @@ func _ready():
 					tile = outerPool.pop_front()
 				else:
 					tile = innerPool.pop_front()
-				set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(3,5))
 				global.plansza[kolumna].append(tile)
-				global.zakryte[kolumna].append(true)
-
+				
+				if(global.AllUncovered == false):
+					global.zakryte[kolumna].append(true)
+					set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(3,5))
+				else:
+					global.zakryte[kolumna].append(false)
+					for i in range(0,tilesetIndex.size()):
+						if tilesetIndex[i].has(tile):
+							set_cell(0,Vector2i(kolumna,szereg),1,Vector2i(tilesetIndex[i].find(tile,0),i))

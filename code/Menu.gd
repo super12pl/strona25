@@ -27,3 +27,6 @@ func _on_exit_pressed():
 
 func _on_rooms_pressed():
 	get_tree().change_scene_to_file("res://scenes//rooms.tscn")
+
+func _on_kurwa_pressed():
+	global.AllUncovered = true
